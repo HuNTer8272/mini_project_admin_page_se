@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./mini-project-se.db"
+}
+
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model home_slider{
+  id         Int      @id @default(autoincrement())
+  image_url  String
+  title      String 
+  m_title    String
+}
+model home_events{
+  id         Int      @id @default(autoincrement())
+  image_url  String
+  title      String 
+  m_title    String
+}
+
+model upcoming_events {
+  id Int @id @default(autoincrement())
+  image_url  String
+  title      String 
+  m_title    String
+}
+
+model about_events{
+  id Int @id @default(autoincrement())
+  image_url  String
+  title      String 
+  m_title    String
+}
+
+model about_slider{
+  id Int @id @default(autoincrement())
+  image_url  String
+  title      String 
+  m_title    String
+}
+
+
+model event_page_events {
+  id Int @id @default(autoincrement())
+  image_url  String
+  title      String 
+  m_title    String
+}
+
+model member_details  {
+  id           Int      @id @default(autoincrement())
+  name         String   
+  m_name       String   
+  position     String
+  m_position   String
+  image_url    String
+}
+
+model member_past_details {
+  id           Int      @id @default(autoincrement())
+  name         String   
+  m_name       String   
+  position     String
+  m_position   String
+  image_url    String
+}
+
+model system_user {
+  sys_uid   Int      @id @default(autoincrement())
+  sys_role  Role
+  sys_name  String
+  sys_email String   @unique
+  sys_pass  String   
+}
+
+model home_slider_image {
+  id        Int      @id @default(autoincrement())
+  img      String
+}
+
+model image_data {
+  id         Int      @id @default(autoincrement())
+  image_name String
+  image_url  String
+  year       Int
+}
+
+// frontend page table 
+// *content: {section1:{en: "content", mr: "content"}, section2:{en: "content", mr: "content"}}
+// model about_us{
+//   id        Int      @id @default(autoincrement())
+//   title     String
+//   content   Json
+// }
+
+// model events{
+//   id        Int      @id @default(autoincrement())
+//   title     String
+//   content   Json
+// }
+
+
+// model upcoming_events{
+//   id        Int      @id @default(autoincrement())
+//   title     String
+//   content   Json
+// }
+
